@@ -40,12 +40,14 @@ body {
 
 .button {
   cursor: pointer;
-  margin-bottom: 20px;
   padding: 20px;
   color: #fff;
   font-size: 24px;
   background-color: var(--purple);
   border-radius: 20px;
+  &:hover {
+    background-color: purple;
+  }
 }
 
 .ideas {
@@ -54,9 +56,41 @@ body {
 }
 
 .idea {
+  display: block;
   flex: 0 0 250px;
   padding: 20px;
   font-size: 18px;
   background-color: var(--black-lighten);
   border-radius: 20px;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box {
+  /* flex: 0 0 0; */
+  display: inline-block;
+  padding: 20px;
+  width: 100px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: var(--black-lighten);
+  border-radius: 20px;
+}
+
+.div {
+  display: inline-block;
+  padding: 50px;
+  border-radius: 20px;
+  background-color: var(--black-lighten);
+
+  .p {
+    padding: 50px;
+    border-radius: 20px;
+    background-color: var(--error);
+  }
 }
