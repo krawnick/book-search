@@ -43,3 +43,6 @@ footer:after,
   display: table;
   clear: both;
 }
+button {
+  border: none;
+}

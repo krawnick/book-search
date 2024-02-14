@@ -4,10 +4,12 @@
   --black: #1c1b21;
   --black-lighten: #2d2c33;
   --error: #ffc5c5;
+  --purple: #571f63;
 }
 
 h1 {
   display: inline-block;
+  margin-bottom: 20px;
   padding: 10px 20px;
   font-size: 42px;
   font-weight: 700;
@@ -30,4 +32,31 @@ body {
   color: var(--black);
   border-radius: 20px;
   background-color: var(--error);
+}
+
+#root {
+  text-align: center;
+}
+
+.button {
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 20px;
+  color: #fff;
+  font-size: 24px;
+  background-color: var(--purple);
+  border-radius: 20px;
+}
+
+.ideas {
+  display: flex;
+  justify-content: space-between;
+}
+
+.idea {
+  flex: 0 0 250px;
+  padding: 20px;
+  font-size: 18px;
+  background-color: var(--black-lighten);
+  border-radius: 20px;
 }
