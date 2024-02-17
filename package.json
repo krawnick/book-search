@@ -1,6 +1,16 @@
 {
+  "name": "javascript-advanced",
+  "version": "1.0.0",
+  "description": "book app",
+  "main": "app.js",
+  "keywords": [
+    "books",
+    "app"
+  ],
   "scripts": {
-    "start": "live-server"
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup"
   },
   "dependencies": {
     "live-server": "^1.2.2"
