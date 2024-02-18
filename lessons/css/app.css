@@ -9,29 +9,35 @@
 
 h1 {
   display: inline-block;
+
   margin-bottom: 20px;
   padding: 10px 20px;
+
   font-size: 42px;
   font-weight: 700;
   letter-spacing: 5px;
-  border-radius: 20px;
+
   background-color: var(--black-lighten);
+  border-radius: 20px;
 }
 
 body {
   padding: 20px;
-  background-color: var(--black);
   color: #fff;
+  background-color: var(--black);
 }
 
 #error {
   display: inline-block;
+
   margin: 20px;
   padding: 20px;
+
   font-size: 20px;
   color: var(--black);
-  border-radius: 20px;
+
   background-color: var(--error);
+  border-radius: 20px;
 }
 
 #root {
@@ -40,12 +46,16 @@ body {
 
 .button {
   cursor: pointer;
-  padding: 20px;
+
   margin: 5px;
-  color: #fff;
+  padding: 20px;
+
   font-size: 24px;
+  color: #fff;
+
   background-color: var(--purple);
   border-radius: 20px;
+
   &:hover {
     background-color: purple;
   }
@@ -53,19 +63,23 @@ body {
 
 .ideas {
   display: flex;
-  justify-content: space-between;
   gap: 40px;
+  justify-content: space-between;
 }
 
 .idea {
   display: inline-block;
-  margin: 5px;
+
   /* flex: 0 0 250px; */
   width: 100px;
+  margin: 5px;
   padding: 20px;
+
   font-size: 20px;
+
   background-color: var(--black-lighten);
   border-radius: 20px;
+
   &:not(:last-child) {
     margin-bottom: 10px;
   }
@@ -80,11 +94,14 @@ body {
 .box {
   /* flex: 0 0 0; */
   display: inline-block;
-  padding: 20px;
+
   width: 100px;
-  text-align: center;
+  padding: 20px;
+
   font-size: 24px;
   font-weight: 700;
+  text-align: center;
+
   background-color: var(--black-lighten);
   border-radius: 20px;
 }
@@ -92,32 +109,37 @@ body {
 .div {
   display: inline-block;
   padding: 50px;
-  border-radius: 20px;
   background-color: var(--black-lighten);
+  border-radius: 20px;
 
   .p {
     padding: 50px;
-    border-radius: 20px;
     background-color: var(--error);
+    border-radius: 20px;
   }
 }
 
 .form {
   display: flex;
   gap: 20px;
+
+  width: 100%;
   margin-bottom: 20px;
   padding: 20px;
-  width: 100%;
+
   font-size: 36px;
-  text-align: left;
   line-height: 150%;
+  text-align: left;
+
   background-color: var(--error);
   border-radius: 20px;
 
   .input {
     width: 100%;
     padding: 15px;
+
     font-size: 24px;
+
     border: none;
     border-radius: 20px;
   }

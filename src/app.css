@@ -1,12 +1,12 @@
-@import url("./normalize.css");
-
 :root {
   --black: #1c1b21;
   --black-lighten: #2d2c33;
   --pink: #ffc5c5;
   --purple: #571f63;
+  --white: #e7ffe6;
 }
 
 body {
+  color: var(--white);
   background-color: var(--black);
 }
