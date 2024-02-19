@@ -3,6 +3,9 @@ import { NotFound } from './views/notFound/notFound.js'
 
 class App {
   routes = [{ path: '', view: MainView }]
+  appState = {
+    favorites: [],
+  }
 
   constructor() {
     window.addEventListener('hashchange', this.route.bind(this))
@@ -17,9 +20,8 @@ class App {
     const findView = this.routes.find((r) => r.path === location.hash)
     const view = findView ? findView.view : NotFound
 
-    this.currentView = new view().render()
+    this.currentView = new view(this.appState).render()
   }
 }
 
 new App()
-console.log(new App())
