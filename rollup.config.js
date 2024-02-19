@@ -7,5 +7,10 @@ export default {
     file: 'dist/build.js',
     format: 'iife',
   },
-  plugins: [css(), nodeResolve()],
+  plugins: [
+    css({
+      output: 'build.css',
+    }),
+    nodeResolve(),
+  ],
 }

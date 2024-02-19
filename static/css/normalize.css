@@ -1,57 +1,132 @@
-*,  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-*::after,
-*::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  transition: 0.5s ease-in-out; /* добавим плавность переходов для всех элементов страницы */
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  outline: none;
-}
-
-img {
-  display: block;
-  width: 100%;
-}
-
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-  font-family: "Playfair Display";
-  font-weight: normal;
-  letter-spacing: 1px;
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+
+  border: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 body {
-  font-family: "Open Sans", arial, sans-serif;
-  font-size: 14px;
   line-height: 1;
-  color: #373737;
-
-  background: #f7f7f7;
 }
 
-header::after,
-.container::after,
-footer::after,
-.widget-posts-list li::after,
-#subscribe::after {
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: "";
-  clear: both;
-  display: table;
+  content: none;
 }
 
-button {
-  border: none;
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
 }

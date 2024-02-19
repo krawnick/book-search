@@ -1,5 +1,6 @@
 import { MainView } from './views/main/main.js'
 import { NotFound } from './views/notFound/notFound.js'
+import './app.css'
 
 class App {
   routes = [{ path: '', view: MainView }]

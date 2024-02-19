@@ -3,10 +3,11 @@
   --black-lighten: #2d2c33;
   --pink: #ffc5c5;
   --purple: #571f63;
-  --white: #e7ffe6;
+  --white: #fdf;
 }
 
 body {
+  font-family: "Open Sans", sans-serif;
   color: var(--white);
   background-color: var(--black);
 }
