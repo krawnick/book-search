@@ -13,15 +13,13 @@ class App {
     if (this.currentView) {
       this.currentView.destroy()
     }
-    const view = this.routes.find((r) => r.path === location.hash).view
 
-    if (!this.view) {
-      NotFound().render()
-    }
-    this.currentView = new view()
-    console.log('this.currentView', this.currentView)
-    this.currentView.render()
+    const findView = this.routes.find((r) => r.path === location.hash)
+    const view = findView ? findView.view : NotFound
+
+    this.currentView = new view().render()
   }
 }
 
 new App()
+console.log(new App())
