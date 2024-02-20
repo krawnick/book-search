@@ -4,10 +4,23 @@
   --pink: #ffc5c5;
   --purple: #571f63;
   --white: #fdf;
+  --transition: 0.3s;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   color: var(--white);
   background-color: var(--black);
+
+  &::selection {
+    color: var(--black);
+    background-color: var(--pink);
+  }
+}
+
+button,
+a {
+  &:active {
+    transform: translateY(1px);
+  }
 }

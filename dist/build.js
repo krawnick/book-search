@@ -1121,7 +1121,6 @@
 	  }
 
 	  render() {
-	    this.element.innerHTML = '';
 	    this.element.classList.add('header');
 	    this.element.innerHTML = `
     <div>
@@ -1140,6 +1139,33 @@
     </div>
     `;
 	    console.log('header', this.element);
+	    return this.element
+	  }
+	}
+
+	class Search extends DivComponent {
+	  constructor(state) {
+	    super();
+	    this.state = state;
+	  }
+
+	  render() {
+	    this.element.classList.add('search');
+	    this.element.innerHTML = `
+    <div class="search__wrapper">
+      <input 
+      class="search__input"
+      type="text" 
+      placeholder="Find a book or author..." 
+      value="${this.state.searchQuery ? this.state.searchQuery : ''}" 
+      />
+      <img src="../../../static/search.svg" alt="search"/>
+    </div>
+    <button class="search__button" aria-label="search">
+      <img src="../../../static/search-black.svg" alt="search"/>
+    </button>
+    `;
+	    console.log('search', this.element);
 	    return this.element
 	  }
 	}
@@ -1167,7 +1193,7 @@
 
 	  render() {
 	    const main = document.createElement('div');
-	    main.innerHTML = '';
+	    main.append(new Search(this.state).render());
 	    this.app.innerHTML = '';
 	    this.renderHeader();
 	    this.app.append(main);
