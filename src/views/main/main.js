@@ -15,13 +15,32 @@ export class MainView extends AbstractView {
     super()
     this.appState = appState
     this.appState = onChange(this.appState, this.appStateHook.bind(this))
+    this.state = onChange(this.state, this.stateHook.bind(this))
     this.setTitle('Book search')
   }
 
   appStateHook(path) {
-    if (path === 'favorites') {
+    if (path === 'favorites') console.log(path)
+  }
+
+  async stateHook(path) {
+    if (path === 'searchQuery') {
       console.log(path)
+      this.state.loading = true
+      const data = await this.loadList(this.state)
+      this.state.loading = false
+      this.state.list = data.docs
+      console.log(data)
     }
+  }
+
+  async loadList({ searchQuery, offset }) {
+    const url = 'https://openlibrary.org/search.json'
+    const q = `?q=${searchQuery}`
+    const o = `&offset=${offset}`
+
+    const res = await fetch(url + q + o)
+    return res.json()
   }
 
   render() {

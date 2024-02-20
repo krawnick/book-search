@@ -50,8 +50,16 @@
   .search__button {
     margin-left: 10px;
     padding: 0 6px;
+
     background-color: var(--white);
     border-radius: 50px;
+
+    transition: var(--transition);
+
+    &:hover {
+      box-shadow: 0 0 10px 1px var(--white);
+      transition: var(--transition);
+    }
 
     img {
       height: 36px;
