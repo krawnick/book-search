@@ -2,6 +2,8 @@ import onChange from 'on-change'
 import { AbstractView } from '../../common/view.js'
 import { Header } from '../../components/header/header.js'
 import { Search } from '../../components/search/search.js'
+import { CardList } from '../../components/cardList/cardList.js'
+import { Loader } from '../../components/loader/loader.js'
 
 export class MainView extends AbstractView {
   state = {
@@ -20,7 +22,9 @@ export class MainView extends AbstractView {
   }
 
   appStateHook(path) {
-    if (path === 'favorites') console.log(path)
+    if (path === 'favorites') {
+      console.log(path)
+    }
   }
 
   async stateHook(path) {
@@ -31,6 +35,14 @@ export class MainView extends AbstractView {
       this.state.loading = false
       this.state.list = data.docs
       console.log(data)
+    }
+
+    if (path === 'list') {
+      this.render()
+    }
+
+    if (path === 'loading') {
+      this.render()
     }
   }
 
@@ -46,6 +58,7 @@ export class MainView extends AbstractView {
   render() {
     const main = document.createElement('div')
     main.append(new Search(this.state).render())
+    main.append(new CardList(this.appState, this.state).render())
     this.app.innerHTML = ''
     this.renderHeader()
     this.app.append(main)

@@ -1,0 +1,22 @@
+.card_list {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+
+  .loader {
+    margin: 0 auto;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+
+    & > span {
+      font-size: 36px;
+      color: var(--pink);
+    }
+  }
+}

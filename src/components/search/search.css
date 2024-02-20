@@ -1,6 +1,7 @@
 .search {
   display: flex;
   max-width: 100%;
+  margin-bottom: 20px;
   padding: 10px 20px;
 
   .search__wrapper {
