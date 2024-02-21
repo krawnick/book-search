@@ -2,33 +2,33 @@
   position: relative;
   width: 100px;
   height: 100px;
+}
 
-  .dot {
-    position: absolute;
-    top: calc(50% - 3px);
-    left: calc(50% - 3px);
+.loader .dot {
+  position: absolute;
+  top: calc(50% - 3px);
+  left: calc(50% - 3px);
 
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 
-    border-radius: 3px;
+  border-radius: 3px;
 
-    /* box-shadow:
-      0 -33px,
-      23px -23px,
-      33px 0,
-      23px 23px,
-      0 33px,
-      -23px 23px,
-      -33px 0,
-      -23px -23px; */
+  /* box-shadow:
+    0 -33px,
+    23px -23px,
+    33px 0,
+    23px 23px,
+    0 33px,
+    -23px 23px,
+    -33px 0,
+    -23px -23px; */
 
-    animation-name: loading;
-    animation-duration: 5s;
+  animation-name: loading;
+  animation-duration: 5s;
 
-    /* animation-fill-mode: "50%"; */
-    animation-iteration-count: infinite;
-  }
+  /* animation-fill-mode: "50%"; */
+  animation-iteration-count: infinite;
 }
 
 @keyframes loading {

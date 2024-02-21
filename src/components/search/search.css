@@ -3,67 +3,67 @@
   max-width: 100%;
   margin-bottom: 20px;
   padding: 10px 20px;
+}
 
-  .search__wrapper {
-    position: relative;
-    display: flex;
-    width: 100%;
+.search__wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
 
-    .search__input {
-      flex: 1 1 auto;
+.search__wrapper img {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: 32px;
+}
 
-      width: 100%;
-      padding-left: 46px;
+.search__input {
+  flex: 1 1 auto;
 
-      font-size: 24px;
-      line-height: 200%;
-      color: inherit;
+  width: 100%;
+  padding-left: 46px;
 
-      background-color: inherit;
-      border-radius: 50px;
-      outline: 1px solid var(--white);
+  font-size: 24px;
+  line-height: 200%;
+  color: inherit;
 
-      transition: var(--transition);
+  background-color: inherit;
+  border-radius: 50px;
+  outline: 1px solid var(--white);
 
-      &::placeholder {
-        color: var(--white);
-      }
+  transition: var(--transition);
+}
 
-      &::selection {
-        color: var(--black);
-        background-color: var(--pink);
-      }
+.search__input::placeholder {
+  color: var(--white);
+}
 
-      &:focus {
-        box-shadow: 0 0 10px 1px var(--white);
-        transition: var(--transition);
-      }
-    }
+.search__input::selection {
+  color: var(--black);
+  background-color: var(--pink);
+}
 
-    img {
-      position: absolute;
-      top: 7px;
-      left: 7px;
-      height: 32px;
-    }
-  }
+.search__input:focus {
+  box-shadow: 0 0 10px 1px var(--white);
+  transition: var(--transition);
+}
 
-  .search__button {
-    margin-left: 10px;
-    padding: 0 6px;
+.search__button {
+  margin-left: 10px;
+  padding: 0 6px;
 
-    background-color: var(--white);
-    border-radius: 50px;
+  background-color: var(--white);
+  border-radius: 50px;
 
-    transition: var(--transition);
+  transition: var(--transition);
+}
 
-    &:hover {
-      box-shadow: 0 0 10px 1px var(--white);
-      transition: var(--transition);
-    }
+.search__button img {
+  height: 36px;
+}
 
-    img {
-      height: 36px;
-    }
-  }
+.search__button:hover {
+  box-shadow: 0 0 10px 1px var(--white);
+  transition: var(--transition);
 }

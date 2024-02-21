@@ -11,16 +11,14 @@ body {
   font-family: "Open Sans", sans-serif;
   color: var(--white);
   background-color: var(--black);
-
-  &::selection {
-    color: var(--black);
-    background-color: var(--pink);
-  }
 }
 
 button,
 a {
-  &:active {
-    transform: translateY(1px);
-  }
+  transition: 0.2s !important;
+}
+
+button:active,
+a:active {
+  transform: translateY(1px);
 }
