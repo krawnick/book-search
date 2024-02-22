@@ -25,7 +25,6 @@ export class Header extends DivComponent {
       </a>
     </div>
     `
-    console.log('header', this.element)
     return this.element
   }
 }

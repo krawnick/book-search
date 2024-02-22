@@ -3,14 +3,15 @@ import { AbstractView } from '../../common/view.js'
 import { Header } from '../../components/header/header.js'
 import { Search } from '../../components/search/search.js'
 import { CardList } from '../../components/cardList/cardList.js'
-import { Loader } from '../../components/loader/loader.js'
 
 export class MainView extends AbstractView {
   state = {
+    error: null,
     list: [],
     loading: false,
-    searchQuery: undefined,
     offset: 0,
+    numFound: 0,
+    searchQuery: undefined,
   }
 
   constructor(appState) {
@@ -23,18 +24,17 @@ export class MainView extends AbstractView {
 
   appStateHook(path) {
     if (path === 'favorites') {
-      console.log(path)
+      console.log('favorites')
     }
   }
 
   async stateHook(path) {
     if (path === 'searchQuery') {
-      console.log(path)
       this.state.loading = true
       const data = await this.loadList(this.state)
-      this.state.loading = false
       this.state.list = data.docs
-      console.log(data)
+      this.state.numFound = data.numFound
+      this.state.loading = false
     }
 
     if (path === 'list') {

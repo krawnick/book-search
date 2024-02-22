@@ -1,0 +1,96 @@
+.card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+
+  border-radius: 20px;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.card__image {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  min-height: 250px;
+
+  /* background-color: var(--purple); */
+  background: linear-gradient(var(--black), var(--purple), var(--black));
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__button img {
+  position: absolute;
+  right: 29px;
+  bottom: 25px;
+
+  width: 40px;
+  height: 40px;
+}
+
+.card__image div {
+  padding: 10px;
+
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+
+  opacity: 0.3;
+}
+
+.card__body {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 20px;
+
+  background-color: var(--black-lighten);
+}
+
+.card__tag {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.card__title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card__author {
+  letter-spacing: 1px;
+}
+
+.card__button {
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+
+  width: 75px;
+  height: 75px;
+
+  opacity: 0.2;
+  border-radius: 100px;
+}
+
+.card__button:hover {
+  width: 85px;
+  height: 85px;
+  opacity: 1;
+}
