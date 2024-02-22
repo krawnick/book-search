@@ -19,11 +19,10 @@ export class CardList extends DivComponent {
     this.element.innerHTML = `
     <h1>Books found: <span>${this.state.numFound}</span></h1>
       `
-    console.log('this.state.numFound', this.state.numFound)
 
     if (this.state.list.length > 0) {
       this.state.list.map(async (book) => {
-        this.element.append(new Card(book).render())
+        this.element.append(new Card(book, this.appState).render())
       })
     }
 
