@@ -9,17 +9,21 @@ export class Card extends ArticleComponent {
     console.log('book', book)
   }
 
-  addToFavorites() {
-    this.element
-      .querySelector('.card__button')
-      .addEventListener('click', () => {
-        this.appState.favorites.unshift(this.book.oclc)
-        console.log(this.appState)
-      })
+  #addToFavorites() {
+    this.appState.favorites.unshift(this.book)
+  }
+
+  #deleteFromFavorites() {
+    this.appState.favorites = this.appState.favorites.filter(
+      (book) => book.key !== this.book.key
+    )
   }
 
   render() {
     this.element.classList.add('card')
+    const isFavorites = this.appState.favorites.find(
+      (book) => book.key === this.book.key
+    )
     this.element.innerHTML = `
     
     <div class="card__image">
@@ -39,11 +43,23 @@ export class Card extends ArticleComponent {
       <p class="card__author">${
         this.book.author_name ? this.book.author_name : '(Author not found)'
       }</p>
-      <button class="card__button"><img src="../../../static/favorites-black.svg" alt='button icon'></button>
+      <button class="card__button ${
+        isFavorites ? 'active' : ''
+      }"><img src="../../../static/favorites-black.svg" alt='button icon'></button>
       </div>
       
       `
-    this.addToFavorites()
+
+    if (isFavorites) {
+      this.element
+        .querySelector('button')
+        .addEventListener('click', this.#deleteFromFavorites.bind(this))
+    } else {
+      this.element
+        .querySelector('button')
+        .addEventListener('click', this.#addToFavorites.bind(this))
+    }
+
     return this.element
   }
 }
