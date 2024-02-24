@@ -1,0 +1,11 @@
+.not_found {
+  margin: 50px;
+  padding: 50px;
+
+  font-size: 36px;
+  color: var(--red);
+  text-align: center;
+
+  border: 3px solid var(--red);
+  border-radius: 20px;
+}

@@ -1,0 +1,16 @@
+.favorites {
+  padding: 20px;
+}
+
+.favorites h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.favorites h1 span {
+  padding-left: 10px;
+  font-size: 36px;
+  color: var(--pink);
+}

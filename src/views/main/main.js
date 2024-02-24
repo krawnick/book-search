@@ -22,6 +22,11 @@ export class MainView extends AbstractView {
     this.setTitle('Book search')
   }
 
+  destroy() {
+    onChange.unsubscribe(this.appState)
+    onChange.unsubscribe(this.state)
+  }
+
   appStateHook(path) {
     if (path === 'favorites') {
       console.log('favorites')
@@ -52,16 +57,18 @@ export class MainView extends AbstractView {
     const q = `?q=${searchQuery}`
     const o = `&offset=${offset}`
 
-    const res = await fetch(url + q + o)
-    return res.json()
+    if (q) {
+      const res = await fetch(url + q + o)
+      return res.json()
+    }
   }
 
   render() {
+    this.app.innerHTML = ''
+    this.renderHeader()
     const main = document.createElement('div')
     main.append(new Search(this.state).render())
     main.append(new CardList(this.appState, this.state).render())
-    this.app.innerHTML = ''
-    this.renderHeader()
     this.app.append(main)
   }
 
