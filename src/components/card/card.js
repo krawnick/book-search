@@ -6,7 +6,6 @@ export class Card extends ArticleComponent {
     super()
     this.appState = appState
     this.book = book
-    console.log('book', book)
   }
 
   #addToFavorites() {

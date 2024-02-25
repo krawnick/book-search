@@ -2,6 +2,7 @@ import './cardList.css'
 import { DivComponent } from '../../common/div-component'
 import { Loader } from '../loader/loader'
 import { Card } from '../card/card'
+import { Pagination } from '../pagination/pagination'
 
 export class CardList extends DivComponent {
   constructor(appState, state) {
@@ -21,9 +22,17 @@ export class CardList extends DivComponent {
       `
 
     if (this.state.list.length > 0) {
-      this.state.list.map(async (book) => {
-        this.element.append(new Card(book, this.appState).render())
-      })
+      for (let i = 0; i < 10; i++) {
+        this.state.list[i]
+          ? this.element.append(
+              new Card(this.state.list[i], this.appState).render()
+            )
+          : null
+      }
+    }
+
+    if (this.state.numFound > 10) {
+      this.element.append(new Pagination(this.state).render())
     }
 
     return this.element

@@ -1,0 +1,36 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+}
+
+.pagination button {
+  margin-right: 10px;
+  padding: 10px;
+
+  font-size: 24px;
+  color: var(--white);
+
+  background-color: transparent;
+  border: solid 1px;
+  border-radius: 20px;
+}
+
+.pagination button:hover {
+  box-shadow: 0 0 10px 1px var(--white);
+  transition: var(--transition);
+}
+
+.pagination button:disabled {
+  pointer-events: none;
+  color: var(--black);
+  background-color: var(--black-lighten);
+}
+
+.pagination__info {
+  line-height: 145%;
+}
+
+.pagination span {
+  font-weight: 700;
+  color: var(--pink);
+}

@@ -30,7 +30,7 @@ export class Favorites extends AbstractView {
     const favorites = document.createElement('div')
     favorites.classList.add('favorites')
 
-    favorites.innerHTML = `<h1>Favorite books: <span>${this.appState.favorites.length}</span><h1>`
+    favorites.innerHTML = `<h1>Favorite books: <span>${this.appState.favorites.length}</span></h1>`
 
     this.appState.favorites.map((book) => {
       favorites.append(new Card(book, this.appState).render())

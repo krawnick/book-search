@@ -29,7 +29,6 @@ export class MainView extends AbstractView {
 
   appStateHook(path) {
     if (path === 'favorites') {
-      console.log('favorites')
       this.render()
     }
   }
@@ -37,9 +36,12 @@ export class MainView extends AbstractView {
   async stateHook(path) {
     if (path === 'searchQuery') {
       this.state.loading = true
+      this.state.offset = 0
+
       const data = await this.loadList(this.state)
       this.state.list = data.docs
       this.state.numFound = data.numFound
+
       this.state.loading = false
     }
 
@@ -49,6 +51,14 @@ export class MainView extends AbstractView {
 
     if (path === 'loading') {
       this.render()
+    }
+
+    if (path === 'offset') {
+      this.state.loading = true
+      const data = await this.loadList(this.state)
+      this.state.list = data.docs
+      this.state.numFound = data.numFound
+      this.state.loading = false
     }
   }
 
@@ -65,10 +75,14 @@ export class MainView extends AbstractView {
 
   render() {
     this.app.innerHTML = ''
+
     this.renderHeader()
+
     const main = document.createElement('div')
+
     main.append(new Search(this.state).render())
     main.append(new CardList(this.appState, this.state).render())
+
     this.app.append(main)
   }
 
